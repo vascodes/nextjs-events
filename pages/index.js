@@ -6,7 +6,6 @@ function HomePage() {
 
 	return (
 		<>
-			<h1>Featured Events</h1>
 			<EventList events={featuredEvents} />
 		</>
 	);

@@ -23,7 +23,7 @@ function FilteredEventsPage() {
 	// Invalid URL check.
 	if (isNaN(numYear) || isNaN(numMonth) || slug.length > 2) {
 		return (
-			<AlertDialog buttonlink="/events" buttonText="All Events">
+			<AlertDialog buttonLink="/events" buttonText="All Events">
 				Invalid URL.
 			</AlertDialog>
 		);
@@ -32,7 +32,7 @@ function FilteredEventsPage() {
 	// Invalid Month check.
 	if (numMonth < 1 || numMonth > 12) {
 		return (
-			<AlertDialog buttonlink="/events" buttonText="All Events">
+			<AlertDialog buttonLink="/events" buttonText="All Events">
 				Invalid Month.
 			</AlertDialog>
 		);
@@ -42,7 +42,7 @@ function FilteredEventsPage() {
 
 	if (!filteredEvents || filteredEvents.length === 0) {
 		return (
-			<AlertDialog buttonlink="/events" buttonText="All Events">
+			<AlertDialog buttonLink="/events" buttonText="All Events">
 				No events during the provided filter.
 			</AlertDialog>
 		);

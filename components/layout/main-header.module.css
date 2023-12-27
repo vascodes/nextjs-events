@@ -3,7 +3,8 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 1rem 10%;
+	padding: 1rem 5%;
+	gap: 3rem;
 	height: 5rem;
 	background-color: #202020;
 }

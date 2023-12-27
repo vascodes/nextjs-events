@@ -46,7 +46,7 @@ function FilteredEventsPage() {
 	if (!filteredEvents || filteredEvents.length === 0) {
 		return (
 			<AlertDialog Button={AlertButton}>
-				No events during the provided filter.
+				No events during the provided date.
 			</AlertDialog>
 		);
 	}

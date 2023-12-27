@@ -1,8 +1,11 @@
-## Events website using Next.js 
+# Events website using Next.js 
 
 NextEvents is a website to showcase various events around the world.
 
 The goal of this project was to learn the basics of Next.js and file-based routing.
+
+## Screenshot
+<img alt="NextEvents screenshot" src="./next-events.png" width="50%">
 
 Some features:
 1. Multiple Pages to view All events, Selected Event, Featured events, Filtered events etc.

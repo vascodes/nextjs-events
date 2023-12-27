@@ -5,6 +5,7 @@ import { getFilteredEvents } from "../../dummy-data";
 import EventList from "../../components/events/EventList";
 import ResultsTitle from "../../components/results-title/ResultsTitle";
 import AlertDialog from "../../components/ui/AlertDialog";
+import Button from "../../components/ui/Button";
 
 function FilteredEventsPage() {
 	const router = useRouter();
@@ -19,11 +20,13 @@ function FilteredEventsPage() {
 	const filterMonth = slug[1];
 	const numYear = Number(filterYear);
 	const numMonth = Number(filterMonth);
+	
+	const AlertButton = <Button link="/events">All Events</Button>;
 
 	// Invalid URL check.
 	if (isNaN(numYear) || isNaN(numMonth) || slug.length > 2) {
 		return (
-			<AlertDialog buttonLink="/events" buttonText="All Events">
+			<AlertDialog Button={AlertButton}>
 				Invalid URL.
 			</AlertDialog>
 		);
@@ -32,17 +35,17 @@ function FilteredEventsPage() {
 	// Invalid Month check.
 	if (numMonth < 1 || numMonth > 12) {
 		return (
-			<AlertDialog buttonLink="/events" buttonText="All Events">
+			<AlertDialog Button={AlertButton}>
 				Invalid Month.
 			</AlertDialog>
 		);
 	}
 
-	const filteredEvents = getFilteredEvents({ year: numYear, month: numMonth });
+	const filteredEvents = getFilteredEvents({ year: numYear, month: numMonth });	
 
 	if (!filteredEvents || filteredEvents.length === 0) {
 		return (
-			<AlertDialog buttonLink="/events" buttonText="All Events">
+			<AlertDialog Button={AlertButton}>
 				No events during the provided filter.
 			</AlertDialog>
 		);

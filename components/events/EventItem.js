@@ -13,12 +13,12 @@ function EventItem(props) {
 		year: "numeric",
 	});
 
-	const eventLink = `events/${id}`;
+	const eventLink = `/events/${id}`;
 
 	return (
 		<li className={classes.item}>
 			{/* Event Image */}
-			<img src={image} alt={title} />
+			<img src={`/${image}`} alt={title} />
 
 			{/* Event Content */}
 			<div className={classes.content}>

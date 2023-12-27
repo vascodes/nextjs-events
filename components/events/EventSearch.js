@@ -51,6 +51,7 @@ function EventSearch() {
 						</select>
 					</div>
 				</div>
+				
 				<Button>Find Events</Button>
 			</form>
 		</>

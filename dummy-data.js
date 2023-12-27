@@ -14,7 +14,7 @@ const DUMMY_EVENTS = [
     title: 'Music Production Workshop',
     description:
       "Wanna learn how to produce cool beats and become the next big star? Join us!",
-    location: 'New Wall Street 5, 98765 New Work',
+    location: 'New Wall Street 5, 98765 New York',
     date: '2024-05-30',
     image: 'images/music-event.jpg',
     isFeatured: true,
@@ -23,7 +23,7 @@ const DUMMY_EVENTS = [
     id: 'e3',
     title: 'Dance Party',
     description:
-      'Get up on the floor, Dancing all night long, Get up on the floor, Dancing till the break of dawn!',
+      'Get up on the floor, Dancing all night long, Get up on the floor, Dance till the break of dawn!',
     location: 'My Street 12, 10115 Broke City',
     date: '2024-04-10',
     image: 'images/dance-event.jpg',

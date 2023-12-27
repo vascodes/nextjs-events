@@ -1,6 +1,10 @@
 import { useRouter } from "next/router";
+
 import { getFilteredEvents } from "../../dummy-data";
+
 import EventList from "../../components/events/EventList";
+import ResultsTitle from "../../components/results-title/ResultsTitle";
+import AlertDialog from "../../components/ui/AlertDialog";
 
 function FilteredEventsPage() {
 	const router = useRouter();
@@ -18,22 +22,37 @@ function FilteredEventsPage() {
 
 	// Invalid URL check.
 	if (isNaN(numYear) || isNaN(numMonth) || slug.length > 2) {
-		return <p>Invalid URL.</p>;
+		return (
+			<AlertDialog buttonlink="/events" buttonText="All Events">
+				Invalid URL.
+			</AlertDialog>
+		);
 	}
 
 	// Invalid Month check.
 	if (numMonth < 1 || numMonth > 12) {
-		return <p>Invalid Month.</p>;
+		return (
+			<AlertDialog buttonlink="/events" buttonText="All Events">
+				Invalid Month.
+			</AlertDialog>
+		);
 	}
 
 	const filteredEvents = getFilteredEvents({ year: numYear, month: numMonth });
 
 	if (!filteredEvents || filteredEvents.length === 0) {
-		return <p>No events during the provided filter.</p>;
+		return (
+			<AlertDialog buttonlink="/events" buttonText="All Events">
+				No events during the provided filter.
+			</AlertDialog>
+		);
 	}
+
+	const filterDate = new Date(numYear, numMonth - 1);
 
 	return (
 		<>
+			<ResultsTitle date={filterDate} />
 			<EventList events={filteredEvents} />
 		</>
 	);
